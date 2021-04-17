@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+<br>
+{% include 'flash_messages.html' %}
+{% block main %}
+<div class="jumbotron">
+  <div class="container">
+    <h1>Predict Big 5 Personality Values</h1>
+    <br>
+    <h4>Visit File Upload in the navigation bar and upload csv file to generate personality type.</h4>
+    <br>
+    <p>{{pred_data_c}}</p>
+    <p>{{pred_data_a}}</p>
+    <p>{{pred_data_em}}</p>
+    <p>{{pred_data_ex}}</p>
+    <p>{{pred_data_i}}</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/app.min.js') }}" charset="utf-8"></script>
+{% endblock %}
